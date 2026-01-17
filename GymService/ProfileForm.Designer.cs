@@ -27,62 +27,89 @@ namespace GymService
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblName = new Label();
-            this.lblEmail = new Label();
-            this.lblPhone = new Label();
-            this.lblDetails = new Label();
-            this.lblCourses = new Label();
-            this.btnEdit = new Button();
-            this.btnLogout = new Button();
-
+            lblName = new Label();
+            lblEmail = new Label();
+            lblPhone = new Label();
+            lblDetails = new Label();
+            lblCourses = new Label();
+            btnEdit = new Button();
+            btnLogout = new Button();
             SuspendLayout();
-
-            this.lblName.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblName.Location = new Point(20, 20);
-            this.lblName.Size = new Size(420, 30);
-
-            this.lblEmail.Location = new Point(20, 60);
-            this.lblEmail.Size = new Size(420, 23);
-
-            this.lblPhone.Location = new Point(20, 90);
-            this.lblPhone.Size = new Size(420, 23);
-
-            this.lblDetails.Location = new Point(20, 120);
-            this.lblDetails.Size = new Size(420, 23);
-
-            this.lblCourses.Location = new Point(20, 150);
-            this.lblCourses.Size = new Size(420, 40);
-            this.lblCourses.Text = "Нет записей";
-
-            this.btnEdit.Location = new Point(20, 200);
-            this.btnEdit.Size = new Size(120, 35);
-            this.btnEdit.Text = "Изменить";
-            this.btnEdit.Click += new EventHandler(this.btnEdit_Click);
-
-            this.btnLogout.Location = new Point(160, 200);
-            this.btnLogout.Size = new Size(120, 35);
-            this.btnLogout.Text = "Выйти";
-            this.btnLogout.Click += new EventHandler(this.btnLogout_Click);
-
-            this.btnBack.Location = new Point(300, 200);
-            this.btnBack.Size = new Size(120, 35);
-            this.btnBack.Text = "Назад";
-            this.btnBack.Click += new EventHandler(this.btnLogout_Click);
-
-            this.ClientSize = new Size(460, 260);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.lblCourses);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnBack);
-            this.Text = "Профиль";
-
+            // 
+            // lblName
+            // 
+            lblName.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
+            lblName.Location = new Point(20, 38);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(430, 40);
+            lblName.TabIndex = 0;
+            // 
+            // lblEmail
+            // 
+            lblEmail.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
+            lblEmail.Location = new Point(20, 97);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(430, 40);
+            lblEmail.TabIndex = 1;
+            // 
+            // lblPhone
+            // 
+            lblPhone.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
+            lblPhone.Location = new Point(20, 155);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(430, 40);
+            lblPhone.TabIndex = 2;
+            // 
+            // lblDetails
+            // 
+            lblDetails.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
+            lblDetails.Location = new Point(20, 210);
+            lblDetails.Name = "lblDetails";
+            lblDetails.Size = new Size(430, 40);
+            lblDetails.TabIndex = 3;
+            // 
+            // lblCourses
+            // 
+            lblCourses.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
+            lblCourses.Location = new Point(20, 277);
+            lblCourses.Name = "lblCourses";
+            lblCourses.Size = new Size(430, 50);
+            lblCourses.TabIndex = 4;
+            lblCourses.Text = "ГЌГҐГІ Г§Г ГЇГЁГ±ГҐГ©";
+            // 
+            // btnEdit
+            // 
+            btnEdit.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            btnEdit.Location = new Point(20, 403);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(145, 47);
+            btnEdit.TabIndex = 5;
+            btnEdit.Text = "Г€Г§Г¬ГҐГ­ГЁГІГј";
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            btnLogout.Location = new Point(308, 403);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(142, 47);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Г‚Г»Г©ГІГЁ";
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // ProfileForm
+            // 
+            ClientSize = new Size(480, 510);
+            Controls.Add(lblName);
+            Controls.Add(lblEmail);
+            Controls.Add(lblPhone);
+            Controls.Add(lblDetails);
+            Controls.Add(lblCourses);
+            Controls.Add(btnEdit);
+            Controls.Add(btnLogout);
+            Name = "ProfileForm";
+            Text = "ГЏГ°Г®ГґГЁГ«Гј";
             ResumeLayout(false);
-            PerformLayout();
         }
     }
 }
