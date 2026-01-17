@@ -24,53 +24,76 @@ namespace GymService
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblTitle = new Label();
-            this.txtDescription = new TextBox();
-            this.lstBullets = new ListBox();
-            this.btnEnroll = new Button();
-            this.btnClose = new Button();
-
+            lblTitle = new Label();
+            txtDescription = new TextBox();
+            lstBullets = new ListBox();
+            btnEnroll = new Button();
+            btnClose = new Button();
             SuspendLayout();
-
-            this.lblTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblTitle.Location = new Point(20, 20);
-            this.lblTitle.Size = new Size(420, 30);
-
-            this.txtDescription.Location = new Point(20, 60);
-            this.txtDescription.Size = new Size(420, 80);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.ReadOnly = true;
-
-            this.lstBullets.Location = new Point(20, 150);
-            this.lstBullets.Size = new Size(420, 120);
-
-            this.btnEnroll.Location = new Point(20, 280);
-            this.btnEnroll.Size = new Size(140, 35);
-            this.btnEnroll.Text = "Записаться на курс";
-            this.btnEnroll.Click += new EventHandler(this.btnEnroll_Click);
-
-            this.btnClose.Location = new Point(180, 280);
-            this.btnClose.Size = new Size(140, 35);
-            this.btnClose.Text = "Закрыть";
-            this.btnClose.Click += new EventHandler(this.btnClose_Click);
-
-            // add Back button for consistency
-            var btnBack = new Button();
-            btnBack.Location = new Point(340, 280);
-            btnBack.Size = new Size(80, 35);
-            btnBack.Text = "Назад";
-            btnBack.Click += new EventHandler(this.btnClose_Click);
-            this.Controls.Add(btnBack);
-
-            this.ClientSize = new Size(460, 330);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.lstBullets);
-            this.Controls.Add(this.btnEnroll);
-            this.Controls.Add(this.btnClose);
-            this.Text = "Подробнее";
-
+            // 
+            // lblTitle
+            // 
+            lblTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTitle.Location = new Point(12, 54);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(510, 60);
+            lblTitle.TabIndex = 1;
+            // 
+            // txtDescription
+            // 
+            txtDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            txtDescription.Location = new Point(12, 163);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.ReadOnly = true;
+            txtDescription.Size = new Size(510, 150);
+            txtDescription.TabIndex = 2;
+            // 
+            // lstBullets
+            // 
+            lstBullets.ItemHeight = 15;
+            lstBullets.Location = new Point(12, 344);
+            lstBullets.Name = "lstBullets";
+            lstBullets.Size = new Size(510, 139);
+            lstBullets.TabIndex = 3;
+            // 
+            // btnEnroll
+            // 
+            btnEnroll.BackColor = Color.Chocolate;
+            btnEnroll.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            btnEnroll.ForeColor = SystemColors.ButtonHighlight;
+            btnEnroll.Location = new Point(12, 512);
+            btnEnroll.Name = "btnEnroll";
+            btnEnroll.Size = new Size(233, 43);
+            btnEnroll.TabIndex = 4;
+            btnEnroll.Text = "Записаться на курс";
+            btnEnroll.UseVisualStyleBackColor = false;
+            btnEnroll.Click += btnEnroll_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Chocolate;
+            btnClose.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(289, 512);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(233, 43);
+            btnClose.TabIndex = 5;
+            btnClose.Text = "Закрыть";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // CourseDetailsForm
+            // 
+            BackColor = Color.MistyRose;
+            ClientSize = new Size(534, 580);
+            Controls.Add(lblTitle);
+            Controls.Add(txtDescription);
+            Controls.Add(lstBullets);
+            Controls.Add(btnEnroll);
+            Controls.Add(btnClose);
+            Name = "CourseDetailsForm";
+            Text = "Подробнее";
             ResumeLayout(false);
             PerformLayout();
         }

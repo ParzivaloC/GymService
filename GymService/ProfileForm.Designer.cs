@@ -27,62 +27,100 @@ namespace GymService
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblName = new Label();
-            this.lblEmail = new Label();
-            this.lblPhone = new Label();
-            this.lblDetails = new Label();
-            this.lblCourses = new Label();
-            this.btnEdit = new Button();
-            this.btnLogout = new Button();
-
+            lblName = new Label();
+            lblEmail = new Label();
+            lblPhone = new Label();
+            lblDetails = new Label();
+            lblCourses = new Label();
+            btnEdit = new Button();
+            btnLogout = new Button();
             SuspendLayout();
-
-            this.lblName.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            this.lblName.Location = new Point(20, 20);
-            this.lblName.Size = new Size(420, 30);
-
-            this.lblEmail.Location = new Point(20, 60);
-            this.lblEmail.Size = new Size(420, 23);
-
-            this.lblPhone.Location = new Point(20, 90);
-            this.lblPhone.Size = new Size(420, 23);
-
-            this.lblDetails.Location = new Point(20, 120);
-            this.lblDetails.Size = new Size(420, 23);
-
-            this.lblCourses.Location = new Point(20, 150);
-            this.lblCourses.Size = new Size(420, 40);
-            this.lblCourses.Text = "Нет записей";
-
-            this.btnEdit.Location = new Point(20, 200);
-            this.btnEdit.Size = new Size(120, 35);
-            this.btnEdit.Text = "Изменить";
-            this.btnEdit.Click += new EventHandler(this.btnEdit_Click);
-
-            this.btnLogout.Location = new Point(160, 200);
-            this.btnLogout.Size = new Size(120, 35);
-            this.btnLogout.Text = "Выйти";
-            this.btnLogout.Click += new EventHandler(this.btnLogout_Click);
-
-            this.btnBack.Location = new Point(300, 200);
-            this.btnBack.Size = new Size(120, 35);
-            this.btnBack.Text = "Назад";
-            this.btnBack.Click += new EventHandler(this.btnLogout_Click);
-
-            this.ClientSize = new Size(460, 260);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.lblCourses);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnBack);
-            this.Text = "Профиль";
-
+            // 
+            // lblName
+            // 
+            lblName.BackColor = Color.Silver;
+            lblName.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblName.Location = new Point(41, 24);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(500, 50);
+            lblName.TabIndex = 0;
+            // 
+            // lblEmail
+            // 
+            lblEmail.BackColor = Color.Silver;
+            lblEmail.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblEmail.Location = new Point(41, 94);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(500, 50);
+            lblEmail.TabIndex = 1;
+            // 
+            // lblPhone
+            // 
+            lblPhone.BackColor = Color.Silver;
+            lblPhone.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblPhone.Location = new Point(41, 162);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(500, 50);
+            lblPhone.TabIndex = 2;
+            // 
+            // lblDetails
+            // 
+            lblDetails.BackColor = Color.Silver;
+            lblDetails.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblDetails.Location = new Point(41, 228);
+            lblDetails.Name = "lblDetails";
+            lblDetails.Size = new Size(500, 50);
+            lblDetails.TabIndex = 3;
+            // 
+            // lblCourses
+            // 
+            lblCourses.BackColor = Color.Silver;
+            lblCourses.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblCourses.Location = new Point(41, 328);
+            lblCourses.Name = "lblCourses";
+            lblCourses.Size = new Size(500, 80);
+            lblCourses.TabIndex = 4;
+            lblCourses.Text = "Нет записей";
+            // 
+            // btnEdit
+            // 
+            btnEdit.BackColor = Color.Chocolate;
+            btnEdit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            btnEdit.ForeColor = SystemColors.ButtonHighlight;
+            btnEdit.Location = new Point(41, 489);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(180, 60);
+            btnEdit.TabIndex = 5;
+            btnEdit.Text = "Изменить";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.Chocolate;
+            btnLogout.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            btnLogout.ForeColor = SystemColors.ButtonHighlight;
+            btnLogout.Location = new Point(361, 489);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(180, 60);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Выйти";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // ProfileForm
+            // 
+            ClientSize = new Size(596, 561);
+            Controls.Add(lblName);
+            Controls.Add(lblEmail);
+            Controls.Add(lblPhone);
+            Controls.Add(lblDetails);
+            Controls.Add(lblCourses);
+            Controls.Add(btnEdit);
+            Controls.Add(btnLogout);
+            Name = "ProfileForm";
+            Text = "Профиль";
             ResumeLayout(false);
-            PerformLayout();
         }
     }
 }
