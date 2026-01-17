@@ -31,100 +31,221 @@ namespace GymService
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.txtFirst = new TextBox();
-            this.txtLast = new TextBox();
-            this.txtMiddle = new TextBox();
-            this.numAge = new NumericUpDown();
-            this.cmbGender = new ComboBox();
-            this.numHeight = new NumericUpDown();
-            this.numWeight = new NumericUpDown();
-            this.txtPhone = new TextBox();
-            this.txtEmail = new TextBox();
-            this.btnSave = new Button();
-            this.btnCancel = new Button();
-            this.btnBack = new Button();
-
-            // Begin init for numeric controls
-            ((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numWeight)).BeginInit();
+            txtFirst = new TextBox();
+            txtLast = new TextBox();
+            txtMiddle = new TextBox();
+            numAge = new NumericUpDown();
+            cmbGender = new ComboBox();
+            numHeight = new NumericUpDown();
+            numWeight = new NumericUpDown();
+            txtPhone = new TextBox();
+            txtEmail = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            btnBack = new Button();
+            labelAge = new Label();
+            labelHeight = new Label();
+            labelWeight = new Label();
+            labelGender = new Label();
+            ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numHeight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numWeight).BeginInit();
             SuspendLayout();
-
-            // controls layout (simple)
-            this.txtFirst.PlaceholderText = "Имя";
-            this.txtFirst.Location = new Point(20, 20);
-            this.txtFirst.Size = new Size(200, 27);
-
-            this.txtLast.PlaceholderText = "Фамилия";
-            this.txtLast.Location = new Point(240, 20);
-            this.txtLast.Size = new Size(200, 27);
-
-            this.txtMiddle.PlaceholderText = "Отчество";
-            this.txtMiddle.Location = new Point(20, 60);
-            this.txtMiddle.Size = new Size(200, 27);
-
-            this.numAge.Location = new Point(240, 60);
-            this.numAge.Minimum = 1;
-            this.numAge.Maximum = 120;
-            this.numAge.Value = 18;
-
-            this.cmbGender.Location = new Point(20, 100);
-            this.cmbGender.Size = new Size(200, 27);
-
-            this.numHeight.Location = new Point(240, 100);
-            this.numHeight.Minimum = 50;
-            this.numHeight.Maximum = 250;
-            this.numHeight.Value = 170;
-
-            this.numWeight.Location = new Point(20, 140);
-            this.numWeight.Minimum = 20;
-            this.numWeight.Maximum = 300;
-            this.numWeight.Value = 70;
-
-            this.txtPhone.PlaceholderText = "+7...";
-            this.txtPhone.Location = new Point(240, 140);
-            this.txtPhone.Size = new Size(200, 27);
-
-            this.txtEmail.PlaceholderText = "Email";
-            this.txtEmail.Location = new Point(20, 180);
-            this.txtEmail.Size = new Size(420, 27);
-
-            this.btnSave.Location = new Point(20, 220);
-            this.btnSave.Size = new Size(120, 35);
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.Click += new EventHandler(this.btnSave_Click);
-
-            this.btnCancel.Location = new Point(160, 220);
-            this.btnCancel.Size = new Size(120, 35);
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
-
-            this.btnBack.Location = new Point(300, 220);
-            this.btnBack.Size = new Size(120, 35);
-            this.btnBack.Text = "Назад";
-            this.btnBack.Click += new EventHandler(this.btnBack_Click);
-            this.ClientSize = new Size(460, 280);
-            this.Controls.Add(this.txtFirst);
-            this.Controls.Add(this.txtLast);
-            this.Controls.Add(this.txtMiddle);
-            this.Controls.Add(this.numAge);
-            this.Controls.Add(this.cmbGender);
-            this.Controls.Add(this.numHeight);
-            this.Controls.Add(this.numWeight);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnBack);
-            this.Text = "Регистрация";
-            // End init for numeric controls
-            ((System.ComponentModel.ISupportInitialize)(this.numAge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numWeight)).EndInit();
-
+            // 
+            // txtFirst
+            // 
+            txtFirst.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            txtFirst.Location = new Point(34, 104);
+            txtFirst.Name = "txtFirst";
+            txtFirst.PlaceholderText = "Имя";
+            txtFirst.Size = new Size(434, 33);
+            txtFirst.TabIndex = 0;
+            // 
+            // txtLast
+            // 
+            txtLast.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            txtLast.Location = new Point(34, 161);
+            txtLast.Name = "txtLast";
+            txtLast.PlaceholderText = "Фамилия";
+            txtLast.Size = new Size(434, 33);
+            txtLast.TabIndex = 1;
+            // 
+            // txtMiddle
+            // 
+            txtMiddle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            txtMiddle.Location = new Point(34, 217);
+            txtMiddle.Name = "txtMiddle";
+            txtMiddle.PlaceholderText = "Отчество";
+            txtMiddle.Size = new Size(434, 33);
+            txtMiddle.TabIndex = 2;
+            // 
+            // numAge
+            // 
+            numAge.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            numAge.Location = new Point(245, 278);
+            numAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
+            numAge.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numAge.Name = "numAge";
+            numAge.Size = new Size(223, 33);
+            numAge.TabIndex = 3;
+            numAge.Value = new decimal(new int[] { 18, 0, 0, 0 });
+            // 
+            // cmbGender
+            // 
+            cmbGender.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            cmbGender.Location = new Point(245, 426);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(223, 33);
+            cmbGender.TabIndex = 4;
+            // 
+            // numHeight
+            // 
+            numHeight.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            numHeight.Location = new Point(245, 328);
+            numHeight.Maximum = new decimal(new int[] { 250, 0, 0, 0 });
+            numHeight.Minimum = new decimal(new int[] { 50, 0, 0, 0 });
+            numHeight.Name = "numHeight";
+            numHeight.Size = new Size(223, 33);
+            numHeight.TabIndex = 5;
+            numHeight.Value = new decimal(new int[] { 170, 0, 0, 0 });
+            // 
+            // numWeight
+            // 
+            numWeight.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            numWeight.Location = new Point(245, 378);
+            numWeight.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
+            numWeight.Minimum = new decimal(new int[] { 20, 0, 0, 0 });
+            numWeight.Name = "numWeight";
+            numWeight.Size = new Size(223, 33);
+            numWeight.TabIndex = 6;
+            numWeight.Value = new decimal(new int[] { 70, 0, 0, 0 });
+            // 
+            // txtPhone
+            // 
+            txtPhone.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            txtPhone.Location = new Point(34, 492);
+            txtPhone.Name = "txtPhone";
+            txtPhone.PlaceholderText = "+7...";
+            txtPhone.Size = new Size(434, 33);
+            txtPhone.TabIndex = 7;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            txtEmail.Location = new Point(34, 546);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
+            txtEmail.Size = new Size(434, 33);
+            txtEmail.TabIndex = 8;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.Chocolate;
+            btnSave.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnSave.Location = new Point(34, 612);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(187, 53);
+            btnSave.TabIndex = 9;
+            btnSave.Text = "Сохранить";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.Chocolate;
+            btnCancel.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnCancel.Location = new Point(281, 612);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(187, 53);
+            btnCancel.TabIndex = 10;
+            btnCancel.Text = "Отмена";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.Chocolate;
+            btnBack.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnBack.Location = new Point(12, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(121, 36);
+            btnBack.TabIndex = 11;
+            btnBack.Text = "Назад";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
+            // labelAge
+            // 
+            labelAge.AutoSize = true;
+            labelAge.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            labelAge.Location = new Point(34, 280);
+            labelAge.Name = "labelAge";
+            labelAge.Size = new Size(86, 25);
+            labelAge.TabIndex = 12;
+            labelAge.Text = "Возраст:";
+            // 
+            // labelHeight
+            // 
+            labelHeight.AutoSize = true;
+            labelHeight.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            labelHeight.Location = new Point(34, 330);
+            labelHeight.Name = "labelHeight";
+            labelHeight.Size = new Size(90, 25);
+            labelHeight.TabIndex = 13;
+            labelHeight.Text = "Рост(см):";
+            // 
+            // labelWeight
+            // 
+            labelWeight.AutoSize = true;
+            labelWeight.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            labelWeight.Location = new Point(34, 380);
+            labelWeight.Name = "labelWeight";
+            labelWeight.Size = new Size(77, 25);
+            labelWeight.TabIndex = 14;
+            labelWeight.Text = "Вес(кг):";
+            // 
+            // labelGender
+            // 
+            labelGender.AutoSize = true;
+            labelGender.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            labelGender.Location = new Point(34, 429);
+            labelGender.Name = "labelGender";
+            labelGender.Size = new Size(53, 25);
+            labelGender.TabIndex = 15;
+            labelGender.Text = "Пол:";
+            // 
+            // RegisterForm
+            // 
+            BackColor = Color.MistyRose;
+            ClientSize = new Size(514, 691);
+            Controls.Add(labelGender);
+            Controls.Add(labelWeight);
+            Controls.Add(labelHeight);
+            Controls.Add(labelAge);
+            Controls.Add(txtFirst);
+            Controls.Add(txtLast);
+            Controls.Add(txtMiddle);
+            Controls.Add(numAge);
+            Controls.Add(cmbGender);
+            Controls.Add(numHeight);
+            Controls.Add(numWeight);
+            Controls.Add(txtPhone);
+            Controls.Add(txtEmail);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            Controls.Add(btnBack);
+            Name = "RegisterForm";
+            Text = "Регистрация";
+            ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numHeight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numWeight).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Label labelAge;
+        private Label labelHeight;
+        private Label labelWeight;
+        private Label labelGender;
     }
 }
