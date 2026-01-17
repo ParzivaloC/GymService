@@ -43,6 +43,7 @@ namespace GymService
             this.txtEmail = new TextBox();
             this.btnSave = new Button();
             this.btnCancel = new Button();
+            this.btnBack = new Button();
 
             // Begin init for numeric controls
             ((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
