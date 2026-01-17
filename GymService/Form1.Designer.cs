@@ -44,27 +44,33 @@ namespace GymService
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(30, 80);
+            btnRegister.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            btnRegister.Location = new Point(576, 101);
+            btnRegister.Margin = new Padding(3, 2, 3, 2);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(120, 35);
+            btnRegister.Size = new Size(185, 45);
             btnRegister.TabIndex = 1;
             btnRegister.Text = "Регистрация";
             btnRegister.Click += btnRegister_Click;
             // 
             // btnProfile
             // 
-            btnProfile.Location = new Point(170, 80);
+            btnProfile.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            btnProfile.Location = new Point(385, 101);
+            btnProfile.Margin = new Padding(3, 2, 3, 2);
             btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(120, 35);
+            btnProfile.Size = new Size(185, 45);
             btnProfile.TabIndex = 2;
             btnProfile.Text = "Мой профиль";
             btnProfile.Click += btnProfile_Click;
             // 
             // btnCourses
             // 
-            btnCourses.Location = new Point(310, 80);
+            btnCourses.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            btnCourses.Location = new Point(35, 101);
+            btnCourses.Margin = new Padding(3, 2, 3, 2);
             btnCourses.Name = "btnCourses";
-            btnCourses.Size = new Size(120, 35);
+            btnCourses.Size = new Size(185, 45);
             btnCourses.TabIndex = 3;
             btnCourses.Text = "Курсы";
             btnCourses.Click += btnCourses_Click;
@@ -72,22 +78,23 @@ namespace GymService
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(30, 20);
+            lblTitle.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblTitle.Location = new Point(223, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(180, 40);
+            lblTitle.Size = new Size(295, 65);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "GymService";
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(759, 392);
+            ClientSize = new Size(784, 511);
             Controls.Add(lblTitle);
             Controls.Add(btnRegister);
             Controls.Add(btnProfile);
             Controls.Add(btnCourses);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Main";
             Text = "GymService";
             ResumeLayout(false);
