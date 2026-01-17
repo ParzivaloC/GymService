@@ -18,6 +18,7 @@ namespace GymService
         private TextBox txtEmail;
         private Button btnSave;
         private Button btnCancel;
+        private Button btnBack;
 
         protected override void Dispose(bool disposing)
         {
@@ -43,6 +44,10 @@ namespace GymService
             this.btnSave = new Button();
             this.btnCancel = new Button();
 
+            // Begin init for numeric controls
+            ((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numWeight)).BeginInit();
             SuspendLayout();
 
             // controls layout (simple)
@@ -94,6 +99,11 @@ namespace GymService
             this.btnCancel.Text = "Отмена";
             this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
 
+            this.btnBack.Location = new Point(300, 220);
+            this.btnBack.Size = new Size(120, 35);
+            this.btnBack.Text = "Назад";
+            this.btnBack.Click += new EventHandler(this.btnBack_Click);
+
             this.ClientSize = new Size(460, 280);
             this.Controls.Add(this.txtFirst);
             this.Controls.Add(this.txtLast);
@@ -106,7 +116,12 @@ namespace GymService
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnBack);
             this.Text = "Регистрация";
+            // End init for numeric controls
+            ((System.ComponentModel.ISupportInitialize)(this.numAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numWeight)).EndInit();
 
             ResumeLayout(false);
             PerformLayout();

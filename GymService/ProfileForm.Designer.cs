@@ -14,6 +14,7 @@ namespace GymService
         private Label lblCourses;
         private Button btnEdit;
         private Button btnLogout;
+        private Button btnBack;
 
         protected override void Dispose(bool disposing)
         {
@@ -64,6 +65,11 @@ namespace GymService
             this.btnLogout.Text = "Выйти";
             this.btnLogout.Click += new EventHandler(this.btnLogout_Click);
 
+            this.btnBack.Location = new Point(300, 200);
+            this.btnBack.Size = new Size(120, 35);
+            this.btnBack.Text = "Назад";
+            this.btnBack.Click += new EventHandler(this.btnLogout_Click);
+
             this.ClientSize = new Size(460, 260);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblEmail);
@@ -72,6 +78,7 @@ namespace GymService
             this.Controls.Add(this.lblCourses);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnBack);
             this.Text = "Профиль";
 
             ResumeLayout(false);
