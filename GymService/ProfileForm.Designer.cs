@@ -14,6 +14,7 @@ namespace GymService
         private Label lblCourses;
         private Button btnEdit;
         private Button btnLogout;
+        private Button btnBack;
 
         protected override void Dispose(bool disposing)
         {
@@ -74,7 +75,7 @@ namespace GymService
             lblCourses.Name = "lblCourses";
             lblCourses.Size = new Size(430, 50);
             lblCourses.TabIndex = 4;
-            lblCourses.Text = "Нет записей";
+            lblCourses.Text = "ГЌГҐГІ Г§Г ГЇГЁГ±ГҐГ©";
             // 
             // btnEdit
             // 
@@ -83,7 +84,7 @@ namespace GymService
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(145, 47);
             btnEdit.TabIndex = 5;
-            btnEdit.Text = "Изменить";
+            btnEdit.Text = "Г€Г§Г¬ГҐГ­ГЁГІГј";
             btnEdit.Click += btnEdit_Click;
             // 
             // btnLogout
@@ -93,7 +94,7 @@ namespace GymService
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(142, 47);
             btnLogout.TabIndex = 6;
-            btnLogout.Text = "Выйти";
+            btnLogout.Text = "Г‚Г»Г©ГІГЁ";
             btnLogout.Click += btnLogout_Click;
             // 
             // ProfileForm
@@ -107,7 +108,7 @@ namespace GymService
             Controls.Add(btnEdit);
             Controls.Add(btnLogout);
             Name = "ProfileForm";
-            Text = "Профиль";
+            Text = "ГЏГ°Г®ГґГЁГ«Гј";
             ResumeLayout(false);
         }
     }

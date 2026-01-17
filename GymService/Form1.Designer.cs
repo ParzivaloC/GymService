@@ -12,15 +12,6 @@ namespace GymService
         private Button btnCourses;
         private Label lblTitle;
 
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        // private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -30,73 +21,74 @@ namespace GymService
             base.Dispose(disposing);
         }
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             btnRegister = new Button();
             btnProfile = new Button();
             btnCourses = new Button();
             lblTitle = new Label();
+
             SuspendLayout();
-            // 
-            // btnRegister
-            // 
-            btnRegister.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            btnRegister.Location = new Point(576, 101);
-            btnRegister.Margin = new Padding(3, 2, 3, 2);
+
+            // Main form size (set before computing positions)
+            ClientSize = new Size(640, 200);
+
+            // Title
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitle.Location = new Point(20, 20);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(196, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "GymService";
+
+            // Buttons - shared size and layout
+            var btnWidth = 130;
+            var btnHeight = 36;
+            var gap = 24;
+            var top = 80;
+            var count = 3;
+            var total = count * btnWidth + (count - 1) * gap;
+            var startX = (ClientSize.Width - total) / 2;
+
+            btnRegister.Size = new Size(btnWidth, btnHeight);
+            btnRegister.Location = new Point(startX, top);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(185, 45);
             btnRegister.TabIndex = 1;
             btnRegister.Text = "Регистрация";
             btnRegister.Click += btnRegister_Click;
-            // 
-            // btnProfile
-            // 
-            btnProfile.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            btnProfile.Location = new Point(385, 101);
-            btnProfile.Margin = new Padding(3, 2, 3, 2);
+            btnRegister.Visible = true;
+
+            btnProfile.Size = new Size(btnWidth, btnHeight);
+            btnProfile.Location = new Point(startX + (btnWidth + gap) * 1, top);
             btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(185, 45);
             btnProfile.TabIndex = 2;
             btnProfile.Text = "Мой профиль";
             btnProfile.Click += btnProfile_Click;
-            // 
-            // btnCourses
-            // 
-            btnCourses.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            btnCourses.Location = new Point(35, 101);
-            btnCourses.Margin = new Padding(3, 2, 3, 2);
+            btnProfile.Visible = true;
+
+            btnCourses.Size = new Size(btnWidth, btnHeight);
+            btnCourses.Location = new Point(startX + (btnWidth + gap) * 2, top);
             btnCourses.Name = "btnCourses";
-            btnCourses.Size = new Size(185, 45);
             btnCourses.TabIndex = 3;
             btnCourses.Text = "Курсы";
             btnCourses.Click += btnCourses_Click;
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblTitle.Location = new Point(223, 9);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(295, 65);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "GymService";
-            // 
+            btnCourses.Visible = true;
+
             // Main
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 511);
             Controls.Add(lblTitle);
             Controls.Add(btnRegister);
             Controls.Add(btnProfile);
             Controls.Add(btnCourses);
-            Margin = new Padding(3, 2, 3, 2);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Main";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GymService";
+            Load += Main_Load;
+
             ResumeLayout(false);
             PerformLayout();
         }

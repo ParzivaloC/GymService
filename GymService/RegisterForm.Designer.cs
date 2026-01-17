@@ -18,6 +18,7 @@ namespace GymService
         private TextBox txtEmail;
         private Button btnSave;
         private Button btnCancel;
+        private Button btnBack;
 
         protected override void Dispose(bool disposing)
         {
@@ -55,7 +56,7 @@ namespace GymService
             txtFirst.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             txtFirst.Location = new Point(78, 49);
             txtFirst.Name = "txtFirst";
-            txtFirst.PlaceholderText = "Имя";
+            txtFirst.PlaceholderText = "Г€Г¬Гї";
             txtFirst.Size = new Size(338, 32);
             txtFirst.TabIndex = 0;
             // 
@@ -64,7 +65,7 @@ namespace GymService
             txtLast.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             txtLast.Location = new Point(78, 96);
             txtLast.Name = "txtLast";
-            txtLast.PlaceholderText = "Фамилия";
+            txtLast.PlaceholderText = "Г”Г Г¬ГЁГ«ГЁГї";
             txtLast.Size = new Size(338, 32);
             txtLast.TabIndex = 1;
             // 
@@ -73,7 +74,7 @@ namespace GymService
             txtMiddle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
             txtMiddle.Location = new Point(78, 146);
             txtMiddle.Name = "txtMiddle";
-            txtMiddle.PlaceholderText = "Отчество";
+            txtMiddle.PlaceholderText = "ГЋГІГ·ГҐГ±ГІГўГ®";
             txtMiddle.Size = new Size(338, 32);
             txtMiddle.TabIndex = 2;
             // 
@@ -143,7 +144,7 @@ namespace GymService
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(161, 59);
             btnSave.TabIndex = 9;
-            btnSave.Text = "Сохранить";
+            btnSave.Text = "Г‘Г®ГµГ°Г Г­ГЁГІГј";
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
@@ -153,7 +154,7 @@ namespace GymService
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(161, 59);
             btnCancel.TabIndex = 10;
-            btnCancel.Text = "Отмена";
+            btnCancel.Text = "ГЋГІГ¬ГҐГ­Г ";
             btnCancel.Click += btnCancel_Click;
             // 
             // labelAge
@@ -164,7 +165,7 @@ namespace GymService
             labelAge.Name = "labelAge";
             labelAge.Size = new Size(86, 25);
             labelAge.TabIndex = 11;
-            labelAge.Text = "Возраст:";
+            labelAge.Text = "Г‚Г®Г§Г°Г Г±ГІ:";
             // 
             // labelWeight
             // 
@@ -174,7 +175,7 @@ namespace GymService
             labelWeight.Name = "labelWeight";
             labelWeight.Size = new Size(77, 25);
             labelWeight.TabIndex = 12;
-            labelWeight.Text = "Вес(кг):";
+            labelWeight.Text = "Г‚ГҐГ±(ГЄГЈ):";
             // 
             // labelHeight
             // 
@@ -184,7 +185,7 @@ namespace GymService
             labelHeight.Name = "labelHeight";
             labelHeight.Size = new Size(90, 25);
             labelHeight.TabIndex = 13;
-            labelHeight.Text = "Рост(см):";
+            labelHeight.Text = "ГђГ®Г±ГІ(Г±Г¬):";
             // 
             // label1
             // 
@@ -194,7 +195,7 @@ namespace GymService
             label1.Name = "label1";
             label1.Size = new Size(53, 25);
             label1.TabIndex = 14;
-            label1.Text = "Пол:";
+            label1.Text = "ГЏГ®Г«:";
             // 
             // RegisterForm
             // 
@@ -215,7 +216,7 @@ namespace GymService
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Name = "RegisterForm";
-            Text = "Регистрация";
+            Text = "ГђГҐГЈГЁГ±ГІГ°Г Г¶ГЁГї";
             ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
             ((System.ComponentModel.ISupportInitialize)numHeight).EndInit();
             ((System.ComponentModel.ISupportInitialize)numWeight).EndInit();

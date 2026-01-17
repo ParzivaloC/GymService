@@ -16,28 +16,71 @@ namespace GymService.Services
 
         public static bool IsUserExists()
         {
-            return File.Exists(GetPath());
+            try
+            {
+                return File.Exists(GetPath());
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static User? LoadUser()
         {
             var path = GetPath();
             if (!File.Exists(path)) return null;
-            var txt = File.ReadAllText(path);
-            return JsonConvert.DeserializeObject<User>(txt);
+
+            try
+            {
+                var txt = File.ReadAllText(path);
+                return JsonConvert.DeserializeObject<User>(txt);
+            }
+            catch (JsonException)
+            {
+                // corrupted json
+                return null;
+            }
+            catch (IOException)
+            {
+                return null;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public static void SaveUser(User user)
+        public static bool SaveUser(User user)
         {
             var path = GetPath();
-            var txt = JsonConvert.SerializeObject(user, Formatting.Indented);
-            File.WriteAllText(path, txt);
+            try
+            {
+                var txt = JsonConvert.SerializeObject(user, Formatting.Indented);
+                var tmp = path + ".tmp";
+                File.WriteAllText(tmp, txt);
+                // replace existing file atomically where possible
+                File.Copy(tmp, path, true);
+                File.Delete(tmp);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static void DeleteUser()
         {
             var path = GetPath();
-            if (File.Exists(path)) File.Delete(path);
+            try
+            {
+                if (File.Exists(path)) File.Delete(path);
+            }
+            catch
+            {
+                // ignore
+            }
         }
     }
 }

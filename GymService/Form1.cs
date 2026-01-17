@@ -50,5 +50,10 @@ namespace GymService
             using var c = new CoursesForm();
             c.ShowDialog();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

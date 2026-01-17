@@ -29,10 +29,10 @@ namespace GymService
                 txtFirst.Text = u.FirstName;
                 txtLast.Text = u.LastName;
                 txtMiddle.Text = u.MiddleName;
-                numAge.Value = u.Age;
+                numAge.Value = u.Age > 0 ? u.Age : 18;
                 cmbGender.SelectedItem = u.Gender;
-                numHeight.Value = u.Height;
-                numWeight.Value = u.Weight;
+                numHeight.Value = u.Height > 0 ? u.Height : 170;
+                numWeight.Value = u.Weight > 0 ? u.Weight : 70;
                 txtPhone.Text = u.Phone;
                 txtEmail.Text = u.Email;
                 btnSave.Text = "Сохранить";
@@ -80,9 +80,15 @@ namespace GymService
             _user.Height = (int)numHeight.Value;
             _user.Weight = (int)numWeight.Value;
             _user.Phone = txtPhone.Text.Trim();
-            _user.Email = txtEmail.Text.Trim();
+            _user.Email = txtEmail.Text.Trim().ToLowerInvariant();
 
-            UserStorage.SaveUser(_user);
+            var ok = UserStorage.SaveUser(_user);
+            if (!ok)
+            {
+                MessageBox.Show("Ошибка при сохранении профиля");
+                return;
+            }
+
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -90,6 +96,11 @@ namespace GymService
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }
