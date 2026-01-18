@@ -7,8 +7,6 @@ namespace GymService
     partial class Main
     {
         private System.ComponentModel.IContainer components = null;
-        private Button btnRegister;
-        private Button btnProfile;
         private Button btnCourses;
         private Label lblTitle;
 
@@ -23,8 +21,6 @@ namespace GymService
 
         private void InitializeComponent()
         {
-            btnRegister = new Button();
-            btnProfile = new Button();
             btnCourses = new Button();
             lblTitle = new Label();
             labelHero = new Label();
@@ -34,45 +30,20 @@ namespace GymService
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            btnClose = new Button();
+            btnAccount = new Button();
             SuspendLayout();
-            // 
-            // btnRegister
-            // 
-            btnRegister.BackColor = Color.Chocolate;
-            btnRegister.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            btnRegister.ForeColor = SystemColors.ButtonHighlight;
-            btnRegister.Location = new Point(536, 11);
-            btnRegister.Margin = new Padding(3, 2, 3, 2);
-            btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(179, 47);
-            btnRegister.TabIndex = 1;
-            btnRegister.Text = "Регистрация";
-            btnRegister.UseVisualStyleBackColor = false;
-            btnRegister.Click += btnRegister_Click;
-            // 
-            // btnProfile
-            // 
-            btnProfile.BackColor = Color.Chocolate;
-            btnProfile.Font = new Font("Arial", 15.75F, FontStyle.Bold);
-            btnProfile.ForeColor = SystemColors.ButtonHighlight;
-            btnProfile.Location = new Point(743, 9);
-            btnProfile.Margin = new Padding(3, 2, 3, 2);
-            btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(179, 47);
-            btnProfile.TabIndex = 2;
-            btnProfile.Text = "Мой профиль";
-            btnProfile.UseVisualStyleBackColor = false;
-            btnProfile.Click += btnProfile_Click;
             // 
             // btnCourses
             // 
             btnCourses.BackColor = Color.Chocolate;
+            btnCourses.FlatStyle = FlatStyle.Flat;
             btnCourses.Font = new Font("Arial", 15.75F, FontStyle.Bold);
             btnCourses.ForeColor = SystemColors.ButtonHighlight;
             btnCourses.Location = new Point(12, 400);
             btnCourses.Margin = new Padding(3, 2, 3, 2);
             btnCourses.Name = "btnCourses";
-            btnCourses.Size = new Size(179, 47);
+            btnCourses.Size = new Size(233, 47);
             btnCourses.TabIndex = 3;
             btnCourses.Text = "Курсы";
             btnCourses.UseVisualStyleBackColor = false;
@@ -170,12 +141,43 @@ namespace GymService
             label6.TabIndex = 10;
             label6.Text = "Раскройте свою лучшую версию с\r\nнашим полным спектром фитнес-услуг";
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Chocolate;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(12, 456);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(233, 43);
+            btnClose.TabIndex = 11;
+            btnClose.Text = "Закрыть";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnAccount
+            // 
+            btnAccount.BackColor = Color.Chocolate;
+            btnAccount.FlatStyle = FlatStyle.Flat;
+            btnAccount.Font = new Font("Arial", 15.75F, FontStyle.Bold);
+            btnAccount.ForeColor = SystemColors.ButtonHighlight;
+            btnAccount.Location = new Point(754, 9);
+            btnAccount.Margin = new Padding(3, 2, 3, 2);
+            btnAccount.Name = "btnAccount";
+            btnAccount.Size = new Size(168, 42);
+            btnAccount.TabIndex = 12;
+            btnAccount.Text = "Регистрация";
+            btnAccount.UseVisualStyleBackColor = false;
+            btnAccount.Click += btnAccount_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(934, 511);
+            Controls.Add(btnAccount);
+            Controls.Add(btnClose);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -184,8 +186,6 @@ namespace GymService
             Controls.Add(label1);
             Controls.Add(labelHero);
             Controls.Add(lblTitle);
-            Controls.Add(btnRegister);
-            Controls.Add(btnProfile);
             Controls.Add(btnCourses);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 2, 3, 2);
@@ -205,5 +205,7 @@ namespace GymService
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button btnClose;
+        private Button btnAccount;
     }
 }

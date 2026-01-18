@@ -59,6 +59,7 @@ namespace GymService
             // btnTrainDetails
             // 
             btnTrainDetails.BackColor = Color.Chocolate;
+            btnTrainDetails.FlatStyle = FlatStyle.Flat;
             btnTrainDetails.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnTrainDetails.ForeColor = SystemColors.ButtonHighlight;
             btnTrainDetails.Location = new Point(192, 30);
@@ -73,6 +74,7 @@ namespace GymService
             // btnTrain
             // 
             btnTrain.BackColor = Color.Chocolate;
+            btnTrain.FlatStyle = FlatStyle.Flat;
             btnTrain.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnTrain.ForeColor = SystemColors.ButtonHighlight;
             btnTrain.Location = new Point(300, 30);
@@ -82,7 +84,7 @@ namespace GymService
             btnTrain.Tag = "Тренировки";
             btnTrain.Text = "Записаться";
             btnTrain.UseVisualStyleBackColor = false;
-            btnTrain.Click += btnCourse_Click;
+            btnTrain.Click += btnTrain_Click;
             // 
             // gbNutrition
             // 
@@ -99,6 +101,7 @@ namespace GymService
             // btnNutritionDetails
             // 
             btnNutritionDetails.BackColor = Color.Chocolate;
+            btnNutritionDetails.FlatStyle = FlatStyle.Flat;
             btnNutritionDetails.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnNutritionDetails.ForeColor = SystemColors.ButtonHighlight;
             btnNutritionDetails.Location = new Point(192, 30);
@@ -113,6 +116,7 @@ namespace GymService
             // btnNutrition
             // 
             btnNutrition.BackColor = Color.Chocolate;
+            btnNutrition.FlatStyle = FlatStyle.Flat;
             btnNutrition.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnNutrition.ForeColor = SystemColors.ButtonHighlight;
             btnNutrition.Location = new Point(300, 30);
@@ -122,7 +126,7 @@ namespace GymService
             btnNutrition.Tag = "Питание";
             btnNutrition.Text = "Записаться";
             btnNutrition.UseVisualStyleBackColor = false;
-            btnNutrition.Click += btnCourse_Click;
+            btnNutrition.Click += btnTrain_Click;
             // 
             // gbRecovery
             // 
@@ -139,6 +143,7 @@ namespace GymService
             // btnRecoveryDetails
             // 
             btnRecoveryDetails.BackColor = Color.Chocolate;
+            btnRecoveryDetails.FlatStyle = FlatStyle.Flat;
             btnRecoveryDetails.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnRecoveryDetails.ForeColor = SystemColors.ButtonHighlight;
             btnRecoveryDetails.Location = new Point(192, 30);
@@ -153,6 +158,7 @@ namespace GymService
             // btnRecovery
             // 
             btnRecovery.BackColor = Color.Chocolate;
+            btnRecovery.FlatStyle = FlatStyle.Flat;
             btnRecovery.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnRecovery.ForeColor = SystemColors.ButtonHighlight;
             btnRecovery.Location = new Point(300, 30);
@@ -162,11 +168,12 @@ namespace GymService
             btnRecovery.Tag = "Восстановление";
             btnRecovery.Text = "Записаться";
             btnRecovery.UseVisualStyleBackColor = false;
-            btnRecovery.Click += btnCourse_Click;
+            btnRecovery.Click += btnTrain_Click;
             // 
             // btnBack
             // 
             btnBack.BackColor = Color.Chocolate;
+            btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnBack.ForeColor = SystemColors.ButtonHighlight;
             btnBack.Location = new Point(29, 12);

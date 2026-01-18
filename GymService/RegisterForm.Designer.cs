@@ -92,7 +92,9 @@ namespace GymService
             // 
             // cmbGender
             // 
+            cmbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbGender.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            cmbGender.Items.AddRange(new object[] { "Мужчина", "Женщина", "Другой" });
             cmbGender.Location = new Point(245, 426);
             cmbGender.Name = "cmbGender";
             cmbGender.Size = new Size(223, 33);
@@ -141,6 +143,7 @@ namespace GymService
             // btnSave
             // 
             btnSave.BackColor = Color.Chocolate;
+            btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnSave.Location = new Point(34, 612);
             btnSave.Name = "btnSave";
@@ -153,6 +156,7 @@ namespace GymService
             // btnCancel
             // 
             btnCancel.BackColor = Color.Chocolate;
+            btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnCancel.Location = new Point(281, 612);
             btnCancel.Name = "btnCancel";
@@ -165,6 +169,7 @@ namespace GymService
             // btnBack
             // 
             btnBack.BackColor = Color.Chocolate;
+            btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";

@@ -20,7 +20,6 @@ namespace GymService
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
-            // forward to CoursesForm enrollment logic by setting DialogResult
             DialogResult = DialogResult.OK;
             Close();
         }

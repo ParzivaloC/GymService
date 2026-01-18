@@ -15,34 +15,38 @@ namespace GymService
 
         private void LoadProfile()
         {
-            var u = UserStorage.LoadUser();
-            if (u == null)
+            var user = UserStorage.LoadUser();
+            if (user == null)
             {
                 MessageBox.Show("Пользователь не найден");
                 Close();
                 return;
             }
 
-            lblName.Text = $"{u.FirstName} {u.LastName}";
-            lblEmail.Text = u.Email;
-            lblPhone.Text = u.Phone;
-            lblDetails.Text = $"Возраст: {u.Age}, Пол: {u.Gender}, Рост: {u.Height}, Вес: {u.Weight}";
+            lblName.Text = $"{user.FirstName} {user.LastName}";
+            lblEmail.Text = user.Email;
+            lblPhone.Text = user.Phone;
 
-            // show enrolled courses
-            if (u.EnrolledCourses != null && u.EnrolledCourses.Any())
-            {
-                lblCourses.Text = string.Join(", ", u.EnrolledCourses);
-            }
-            else
-            {
-                lblCourses.Text = "Нет записей";
-            }
+            lblDetails.Text = string.Join(Environment.NewLine,
+                $"Возраст: {user.Age}",
+                $"Пол: {user.Gender}",
+                $"Рост: {user.Height}",
+                $"Вес: {user.Weight}"
+            );
+
+            lblCourses.Text = user.EnrolledCourses != null && user.EnrolledCourses.Any()
+                ? string.Join(", ", user.EnrolledCourses)
+                : "Нет записей";
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            using var r = new RegisterForm();
-            if (r.ShowDialog() == DialogResult.OK)
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            var res = registerForm.ShowDialog();
+            this.Show();
+
+            if (res == DialogResult.OK)
             {
                 LoadProfile();
             }

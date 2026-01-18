@@ -60,6 +60,7 @@ namespace GymService
             // btnEnroll
             // 
             btnEnroll.BackColor = Color.Chocolate;
+            btnEnroll.FlatStyle = FlatStyle.Flat;
             btnEnroll.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnEnroll.ForeColor = SystemColors.ButtonHighlight;
             btnEnroll.Location = new Point(12, 512);
@@ -73,6 +74,7 @@ namespace GymService
             // btnClose
             // 
             btnClose.BackColor = Color.Chocolate;
+            btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnClose.ForeColor = SystemColors.ButtonHighlight;
             btnClose.Location = new Point(289, 512);
