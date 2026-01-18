@@ -10,65 +10,86 @@ namespace GymService
     public partial class RegisterForm : Form
     {
         private User _user = new User();
-        private bool _isEdit = false;
 
         public RegisterForm()
         {
             InitializeComponent();
-            cmbGender.Items.AddRange(new[] { "Мужской", "Женский", "Другой" });
             LoadIfExists();
+
+            //обрабтчики KeyPress
+            txtFirst.KeyPress += Name_KeyPress;
+            txtLast.KeyPress += Name_KeyPress;
+            txtMiddle.KeyPress += Name_KeyPress;
+            txtPhone.KeyPress += Phone_KeyPress;
         }
 
         private void LoadIfExists()
         {
-            var u = UserStorage.LoadUser();
-            if (u != null)
-            {
-                _user = u;
-                _isEdit = true;
-                txtFirst.Text = u.FirstName;
-                txtLast.Text = u.LastName;
-                txtMiddle.Text = u.MiddleName;
-                numAge.Value = u.Age > 0 ? u.Age : 18;
-                cmbGender.SelectedItem = u.Gender;
-                numHeight.Value = u.Height > 0 ? u.Height : 170;
-                numWeight.Value = u.Weight > 0 ? u.Weight : 70;
-                txtPhone.Text = u.Phone;
-                txtEmail.Text = u.Email;
-                btnSave.Text = "Сохранить";
-            }
-            else
+            User user = UserStorage.LoadUser();
+            if (user == null)
             {
                 btnSave.Text = "Зарегистрироваться";
+                return;
             }
+
+            _user = user;
+
+            txtFirst.Text = user.FirstName;
+            txtLast.Text = user.LastName;
+            txtMiddle.Text = user.MiddleName;
+            numAge.Value = user.Age > 0 ? user.Age : 18;
+            cmbGender.SelectedItem = user.Gender;
+            numHeight.Value = user.Height > 0 ? user.Height : 170;
+            numWeight.Value = user.Weight > 0 ? user.Weight : 70;
+            txtPhone.Text = user.Phone;
+            txtEmail.Text = user.Email;
+
+            btnSave.Text = "Сохранить";
         }
 
-        private bool IsValidEmail(string email)
+        private void Name_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(email)) return false;
-            // simple regex: something@something.domain
-            return Regex.IsMatch(email.Trim(), @"^[^\s@]+@[^\s@]+\.[^\s@]+$");
+            if (char.IsControl(e.KeyChar)) return;
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == '-') return;
+            e.Handled = true;
+        }
+
+        private void Phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar)) return;
+            if (char.IsDigit(e.KeyChar)) return;
+            e.Handled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // simple LINQ-based validation
-            var fields = new[] {
-                (Name: "Имя", Value: txtFirst.Text),
-                (Name: "Фамилия", Value: txtLast.Text),
-                (Name: "Email", Value: txtEmail.Text)
+            var required = new[]
+            {
+                ("Имя", txtFirst.Text),
+                ("Фамилия", txtLast.Text),
+                ("Email", txtEmail.Text)
             };
 
-            var empty = fields.Where(f => string.IsNullOrWhiteSpace(f.Value)).Select(f => f.Name).ToArray();
+            var empty = required
+                .Where(f => string.IsNullOrWhiteSpace(f.Item2))
+                .Select(f => f.Item1)
+                .ToArray();
+
             if (empty.Any())
             {
-                MessageBox.Show("Заполните обязательные поля: " + string.Join(", ", empty));
+                MessageBox.Show("Заполните поля: " + string.Join(", ", empty));
                 return;
             }
 
-            if (!IsValidEmail(txtEmail.Text))
+            if (!Regex.IsMatch(txtEmail.Text, @"^[^\s@]+@[^\s@]+\.[^\s@]+$"))
             {
-                MessageBox.Show("Введите корректный Email в формате example@mail.com");
+                MessageBox.Show("Неверный формат Email");
+                return;
+            }
+
+            if (!Regex.IsMatch(txtPhone.Text, @"^\d*$"))
+            {
+                MessageBox.Show("Номер телефона может содержать только цифры");
                 return;
             }
 
@@ -76,32 +97,31 @@ namespace GymService
             _user.LastName = txtLast.Text.Trim();
             _user.MiddleName = txtMiddle.Text.Trim();
             _user.Age = (int)numAge.Value;
-            _user.Gender = cmbGender.SelectedItem?.ToString() ?? string.Empty;
+            _user.Gender = cmbGender.SelectedItem?.ToString() ?? "";
             _user.Height = (int)numHeight.Value;
             _user.Weight = (int)numWeight.Value;
             _user.Phone = txtPhone.Text.Trim();
-            _user.Email = txtEmail.Text.Trim().ToLowerInvariant();
+            _user.Email = txtEmail.Text.Trim().ToLower();
 
-            var ok = UserStorage.SaveUser(_user);
+            bool ok = UserStorage.SaveUser(_user);
             if (!ok)
             {
-                MessageBox.Show("Ошибка при сохранении профиля");
+                MessageBox.Show("Ошибка сохранения");
                 return;
             }
 
             DialogResult = DialogResult.OK;
-            Close();
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
-            Close();
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

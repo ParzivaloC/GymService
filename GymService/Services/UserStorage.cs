@@ -1,49 +1,28 @@
 using System;
 using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 using GymService.Models;
 
 namespace GymService.Services
 {
     public static class UserStorage
     {
-        private static string GetPath()
-        {
-            var dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GymService");
-            if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-            return Path.Combine(dir, "user.json");
-        }
+        private const string FileName = "user.json";
 
-        public static bool IsUserExists()
+        public static bool UserExists()
         {
-            try
-            {
-                return File.Exists(GetPath());
-            }
-            catch
-            {
-                return false;
-            }
+            return File.Exists(FileName);
         }
 
         public static User? LoadUser()
         {
-            var path = GetPath();
-            if (!File.Exists(path)) return null;
+            if (!File.Exists(FileName))
+                return null;
 
             try
             {
-                var txt = File.ReadAllText(path);
-                return JsonConvert.DeserializeObject<User>(txt);
-            }
-            catch (JsonException)
-            {
-                // corrupted json
-                return null;
-            }
-            catch (IOException)
-            {
-                return null;
+                string json = File.ReadAllText(FileName);
+                return JsonSerializer.Deserialize<User>(json);
             }
             catch
             {
@@ -53,15 +32,14 @@ namespace GymService.Services
 
         public static bool SaveUser(User user)
         {
-            var path = GetPath();
             try
             {
-                var txt = JsonConvert.SerializeObject(user, Formatting.Indented);
-                var tmp = path + ".tmp";
-                File.WriteAllText(tmp, txt);
-                // replace existing file atomically where possible
-                File.Copy(tmp, path, true);
-                File.Delete(tmp);
+                string json = JsonSerializer.Serialize(user, new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+                File.WriteAllText(FileName, json);
                 return true;
             }
             catch
@@ -72,15 +50,8 @@ namespace GymService.Services
 
         public static void DeleteUser()
         {
-            var path = GetPath();
-            try
-            {
-                if (File.Exists(path)) File.Delete(path);
-            }
-            catch
-            {
-                // ignore
-            }
+            if (File.Exists(FileName))
+                File.Delete(FileName);
         }
     }
 }
