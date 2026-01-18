@@ -50,38 +50,41 @@ namespace GymService
         private void Name_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsControl(e.KeyChar)) return;
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == '-') return;
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == '-')
+                return;
             e.Handled = true;
         }
 
         private void Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar)) return;
-            if (char.IsDigit(e.KeyChar)) return;
+            if (char.IsControl(e.KeyChar)) 
+                return;
+            if (char.IsDigit(e.KeyChar))
+                return;
             e.Handled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var required = new[]
+            var required = new[]//массив кортежей
             {
                 ("Имя", txtFirst.Text),
                 ("Фамилия", txtLast.Text),
                 ("Email", txtEmail.Text)
             };
 
-            var empty = required
-                .Where(f => string.IsNullOrWhiteSpace(f.Item2))
+            var empty = required//массив незаполненных полей
+                .Where(f => string.IsNullOrWhiteSpace(f.Item2))//f-один эл массива required
                 .Select(f => f.Item1)
                 .ToArray();
 
-            if (empty.Any())
+            if (empty.Any())//есть ли хоть один элемент в массиве
             {
                 MessageBox.Show("Заполните поля: " + string.Join(", ", empty));
                 return;
             }
 
-            if (!Regex.IsMatch(txtEmail.Text, @"^[^\s@]+@[^\s@]+\.[^\s@]+$"))
+            if (!Regex.IsMatch(txtEmail.Text, @"^[^\s@]+@[^\s@]+\.[^\s@]+$"))//Regex-класс для работы с регулярными выражениями
             {
                 MessageBox.Show("Неверный формат Email");
                 return;

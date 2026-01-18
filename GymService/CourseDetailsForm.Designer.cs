@@ -33,28 +33,30 @@ namespace GymService
             // 
             // lblTitle
             // 
-            lblTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTitle.Location = new Point(12, 54);
+            lblTitle.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lblTitle.Location = new Point(12, 100);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(510, 60);
             lblTitle.TabIndex = 1;
             // 
             // txtDescription
             // 
-            txtDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            txtDescription.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             txtDescription.Location = new Point(12, 163);
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.ReadOnly = true;
             txtDescription.Size = new Size(510, 150);
             txtDescription.TabIndex = 2;
+            txtDescription.TextAlign = HorizontalAlignment.Center;
             // 
             // lstBullets
             // 
-            lstBullets.ItemHeight = 15;
+            lstBullets.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            lstBullets.ItemHeight = 21;
             lstBullets.Location = new Point(12, 344);
             lstBullets.Name = "lstBullets";
-            lstBullets.Size = new Size(510, 139);
+            lstBullets.Size = new Size(510, 130);
             lstBullets.TabIndex = 3;
             // 
             // btnEnroll

@@ -176,7 +176,7 @@ namespace GymService
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnBack.ForeColor = SystemColors.ButtonHighlight;
-            btnBack.Location = new Point(29, 12);
+            btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(127, 38);
             btnBack.TabIndex = 3;
