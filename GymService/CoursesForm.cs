@@ -5,6 +5,12 @@ using GymService.Services;
 
 namespace GymService
 {
+    enum CourseType
+    {
+        Training,
+        Nutrition,
+        Recovery
+    }
     public partial class CoursesForm : Form
     {
         public CoursesForm()
@@ -31,22 +37,6 @@ namespace GymService
                 //зареган? - загружай
                 user = UserStorage.LoadUser();
 
-                //если юзер зарегался нев мейн а в курсах, чтобы в мейн кнопка тож менялась
-                try
-                {
-                    Main mainForm = Application.OpenForms//поиск экземпляра Main среди запущ форм
-                        .OfType<Main>()
-                        .FirstOrDefault();
-
-                    if (mainForm != null)
-                    {
-                        mainForm.RefreshAccountButton();
-                    }
-                }
-                catch
-                {
-                    //пепе шнеле 
-                }
             }
 
             if (user == null) return;
@@ -60,93 +50,104 @@ namespace GymService
             MessageBox.Show($"Вы успешно записались на курс «{course}»", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnTrain_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            string course = "Курс";
-
-            if (btn != null && btn.Tag != null)
-            {
-                course = btn.Tag.ToString();
-            }
-
-            EnrollUser(course);
-        }
 
         private void btnBack_Click(object sender, EventArgs e) => Close();
 
-        private void btnDetails_Click(object sender, EventArgs e)
+        private void OpenCourseForm(CourseType type)
         {
-            Button btn = sender as Button;
-            string course = "Курс";
-
-            if (btn != null && btn.Tag != null)
-            {
-                course = btn.Tag.ToString();
-            }
-
-            string desc;
-            if (course == "Тренировки")
-            {
-                desc = "Идеальная программа для тех, кто только начинает свой путь в фитнесе. Пошаговое освоение техники выполнения упражнений, постепенный рост нагрузки и понятная система тренировок.";
-            }
-            else if (course == "Питание")
-            {
-                desc = "План питания для тех, кто хочет правильно питаться и достигать целей — похудение или набор массы. Рекомендации по БЖУ и примерное меню.";
-            }
-            else if (course == "Восстановление")
-            {
-                desc = "Программа восстановления после травм и интенсивных нагрузок. Упражнения на гибкость, рекомендации по отдыху и питанию.";
-            }
-            else
-            {
-                desc = "Описание курса";
-            }
-
+            string desk, course;
             string[] bullets;
-            if (course == "Тренировки")
+            switch (type)
             {
-                bullets = new[]
-                {
-                    "3 тренировки в неделю с постепенным увеличением нагрузки",
-                    "Детальные видео-инструкции по технике выполнения",
-                    "Программа рассчитана на 12 недель с прогрессией",
-                    "Подходит для зала и дома",
-                    "Рекомендации по разминке и заминке"
-                };
+                case CourseType.Training:
+                    course = "Тренировки";
+                    desk = "Идеальная программа для тех, кто только начинает свой путь в фитнесе. Пошаговое освоение техники выполнения упражнений, постепенный рост нагрузки и понятная система тренировок.";
+                    break;
+                case CourseType.Nutrition:
+                    course = "Питание";
+                    desk = "План питания для тех, кто хочет правильно питаться и достигать целей — похудение или набор массы. Рекомендации по БЖУ и примерное меню.";
+                    break;
+                case CourseType.Recovery:
+                    course = "Восстановление";
+                    desk = "Программа восстановления после травм и интенсивных нагрузок. Упражнения на гибкость, рекомендации по отдыху и питанию.";
+                    break;
+                default:
+                    course = "Курс";
+                    desk = "Описание курса";
+                    break;
             }
-            else if (course == "Питание")
+            switch (course)
             {
-                bullets = new[]
-                {
-                    "Сбалансированное питание",
-                    "Программа для набора массы или похудения",
-                    "Режим питания и примерные блюда"
-                };
+                case "Тренировки":
+                    bullets = new[]
+                    {
+                        "3 тренировки в неделю с постепенным увеличением нагрузки",
+                        "Детальные видео-инструкции по технике выполнения",
+                        "Программа рассчитана на 12 недель с прогрессией",
+                        "Подходит для зала и дома",
+                        "Рекомендации по разминке и заминке"
+                    };
+                    break;
+                case "Питание":
+                    bullets = new[]
+                    {
+                        "Сбалансированное питание",
+                        "Программа для набора массы или похудения",
+                        "Режим питания и примерные блюда"
+                    };
+                    break;
+                case "Восстановление":
+                    bullets = new[]
+                    {
+                        "Базовые упражнения для восстановления",
+                        "Рекомендации по реабилитации",
+                        "План восстановления после травм"
+                    };
+                    break;
+                default:
+                    bullets = new string[0];
+                    break;
             }
-            else if (course == "Восстановление")
-            {
-                bullets = new[]
-                {
-                    "Базовые упражнения для восстановления",
-                    "Рекомендации по реабилитации",
-                    "План восстановления после травм"
-                };
-            }
-            else
-            {
-                bullets = new string[0];
-            }
-
             this.Hide();
-            CourseDetailsForm detailsForm = new CourseDetailsForm(course, desc, bullets);
+            CourseDetailsForm detailsForm = new CourseDetailsForm(course, desk, bullets);
             var detailsResult = detailsForm.ShowDialog();
             this.Show();
-
             if (detailsResult == DialogResult.OK)
             {
                 EnrollUser(course);
             }
+
+
+        }
+
+        private void btnTrainDetails_Click(object sender, EventArgs e)
+        {
+            OpenCourseForm(CourseType.Training);
+        }
+
+        private void btnNutritionDetails_Click(object sender, EventArgs e)
+        {
+            OpenCourseForm(CourseType.Nutrition);
+        }
+
+        private void btnRecoveryDetails_Click(object sender, EventArgs e)
+        {
+            OpenCourseForm(CourseType.Recovery);
+        }
+
+        private void btnTrain_Click(object sender, EventArgs e)
+        {
+            EnrollUser("Тренировки");
+        }
+
+        private void btnNutrition_Click(object sender, EventArgs e)
+        {
+            EnrollUser("Питание");
+        }
+
+        private void btnRecovery_Click(object sender, EventArgs e)
+        {
+            EnrollUser("Восстановление");
         }
     }
 }

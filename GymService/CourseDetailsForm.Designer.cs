@@ -53,10 +53,10 @@ namespace GymService
             // lstBullets
             // 
             lstBullets.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lstBullets.ItemHeight = 21;
+            lstBullets.ItemHeight = 25;
             lstBullets.Location = new Point(12, 344);
             lstBullets.Name = "lstBullets";
-            lstBullets.Size = new Size(510, 130);
+            lstBullets.Size = new Size(510, 129);
             lstBullets.TabIndex = 3;
             // 
             // btnEnroll
@@ -67,7 +67,7 @@ namespace GymService
             btnEnroll.ForeColor = SystemColors.ButtonHighlight;
             btnEnroll.Location = new Point(12, 512);
             btnEnroll.Name = "btnEnroll";
-            btnEnroll.Size = new Size(233, 43);
+            btnEnroll.Size = new Size(245, 43);
             btnEnroll.TabIndex = 4;
             btnEnroll.Text = "Записаться на курс";
             btnEnroll.UseVisualStyleBackColor = false;
@@ -79,9 +79,9 @@ namespace GymService
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnClose.ForeColor = SystemColors.ButtonHighlight;
-            btnClose.Location = new Point(289, 512);
+            btnClose.Location = new Point(322, 512);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(233, 43);
+            btnClose.Size = new Size(200, 43);
             btnClose.TabIndex = 5;
             btnClose.Text = "Закрыть";
             btnClose.UseVisualStyleBackColor = false;

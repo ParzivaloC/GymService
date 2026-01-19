@@ -47,9 +47,9 @@ namespace GymService
             // 
             lblName.BackColor = Color.Silver;
             lblName.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblName.Location = new Point(47, 49);
+            lblName.Location = new Point(47, 55);
             lblName.Name = "lblName";
-            lblName.Size = new Size(500, 60);
+            lblName.Size = new Size(500, 54);
             lblName.TabIndex = 0;
             lblName.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -57,9 +57,9 @@ namespace GymService
             // 
             lblEmail.BackColor = Color.Silver;
             lblEmail.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblEmail.Location = new Point(47, 154);
+            lblEmail.Location = new Point(47, 160);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(500, 60);
+            lblEmail.Size = new Size(500, 54);
             lblEmail.TabIndex = 1;
             lblEmail.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -67,9 +67,9 @@ namespace GymService
             // 
             lblPhone.BackColor = Color.Silver;
             lblPhone.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblPhone.Location = new Point(47, 262);
+            lblPhone.Location = new Point(47, 268);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(500, 60);
+            lblPhone.Size = new Size(500, 54);
             lblPhone.TabIndex = 2;
             lblPhone.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -77,9 +77,9 @@ namespace GymService
             // 
             lblDetails.BackColor = Color.Silver;
             lblDetails.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblDetails.Location = new Point(47, 370);
+            lblDetails.Location = new Point(47, 376);
             lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(500, 136);
+            lblDetails.Size = new Size(500, 130);
             lblDetails.TabIndex = 3;
             lblDetails.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -87,9 +87,9 @@ namespace GymService
             // 
             lblCourses.BackColor = Color.Silver;
             lblCourses.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblCourses.Location = new Point(47, 563);
+            lblCourses.Location = new Point(47, 569);
             lblCourses.Name = "lblCourses";
-            lblCourses.Size = new Size(500, 56);
+            lblCourses.Size = new Size(500, 50);
             lblCourses.TabIndex = 4;
             lblCourses.Text = "Нет записей";
             lblCourses.TextAlign = ContentAlignment.MiddleLeft;
@@ -142,7 +142,7 @@ namespace GymService
             labelFIO.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelFIO.Location = new Point(47, 19);
             labelFIO.Name = "labelFIO";
-            labelFIO.Size = new Size(73, 30);
+            labelFIO.Size = new Size(88, 36);
             labelFIO.TabIndex = 8;
             labelFIO.Text = "ФИО:";
             // 
@@ -152,7 +152,7 @@ namespace GymService
             labelEMAIL.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelEMAIL.Location = new Point(47, 124);
             labelEMAIL.Name = "labelEMAIL";
-            labelEMAIL.Size = new Size(76, 30);
+            labelEMAIL.Size = new Size(93, 36);
             labelEMAIL.TabIndex = 9;
             labelEMAIL.Text = "Email:";
             // 
@@ -162,7 +162,7 @@ namespace GymService
             label2.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.Location = new Point(47, 277);
             label2.Name = "label2";
-            label2.Size = new Size(0, 30);
+            label2.Size = new Size(0, 36);
             label2.TabIndex = 10;
             // 
             // labelPHONNE
@@ -171,7 +171,7 @@ namespace GymService
             labelPHONNE.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelPHONNE.Location = new Point(47, 232);
             labelPHONNE.Name = "labelPHONNE";
-            labelPHONNE.Size = new Size(202, 30);
+            labelPHONNE.Size = new Size(249, 36);
             labelPHONNE.TabIndex = 11;
             labelPHONNE.Text = "Номер телефона:";
             // 
@@ -181,7 +181,7 @@ namespace GymService
             labelKURSES.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelKURSES.Location = new Point(47, 340);
             labelKURSES.Name = "labelKURSES";
-            labelKURSES.Size = new Size(169, 30);
+            labelKURSES.Size = new Size(205, 36);
             labelKURSES.TabIndex = 12;
             labelKURSES.Text = "Ваши данные:";
             // 
@@ -191,7 +191,7 @@ namespace GymService
             label1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label1.Location = new Point(47, 533);
             label1.Name = "label1";
-            label1.Size = new Size(152, 30);
+            label1.Size = new Size(186, 36);
             label1.TabIndex = 13;
             label1.Text = "Ваши курсы:";
             // 

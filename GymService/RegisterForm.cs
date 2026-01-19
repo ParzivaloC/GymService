@@ -16,11 +16,6 @@ namespace GymService
             InitializeComponent();
             LoadIfExists();
 
-            //обрабтчики KeyPress
-            txtFirst.KeyPress += Name_KeyPress;
-            txtLast.KeyPress += Name_KeyPress;
-            txtMiddle.KeyPress += Name_KeyPress;
-            txtPhone.KeyPress += Phone_KeyPress;
         }
 
         private void LoadIfExists()
@@ -57,7 +52,7 @@ namespace GymService
 
         private void Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsControl(e.KeyChar)) 
+            if (char.IsControl(e.KeyChar))
                 return;
             if (char.IsDigit(e.KeyChar))
                 return;
@@ -66,7 +61,7 @@ namespace GymService
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var required = new[]//массив кортежей
+            var required = new[]
             {
                 ("Имя", txtFirst.Text),
                 ("Фамилия", txtLast.Text),
@@ -78,21 +73,9 @@ namespace GymService
                 .Select(f => f.Item1)
                 .ToArray();
 
-            if (empty.Any())//есть ли хоть один элемент в массиве
+            if (empty.Length > 0)//есть ли хоть один элемент в массиве
             {
                 MessageBox.Show("Заполните поля: " + string.Join(", ", empty));
-                return;
-            }
-
-            if (!Regex.IsMatch(txtEmail.Text, @"^[^\s@]+@[^\s@]+\.[^\s@]+$"))//Regex-класс для работы с регулярными выражениями
-            {
-                MessageBox.Show("Неверный формат Email");
-                return;
-            }
-
-            if (!Regex.IsMatch(txtPhone.Text, @"^\d*$"))
-            {
-                MessageBox.Show("Номер телефона может содержать только цифры");
                 return;
             }
 
@@ -126,5 +109,7 @@ namespace GymService
         {
             this.Close();
         }
+
+        
     }
 }

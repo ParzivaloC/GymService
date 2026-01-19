@@ -64,12 +64,12 @@ namespace GymService
             btnTrainDetails.ForeColor = SystemColors.ButtonHighlight;
             btnTrainDetails.Location = new Point(192, 30);
             btnTrainDetails.Name = "btnTrainDetails";
-            btnTrainDetails.Size = new Size(98, 33);
+            btnTrainDetails.Size = new Size(114, 33);
             btnTrainDetails.TabIndex = 0;
             btnTrainDetails.Tag = "Тренировки";
             btnTrainDetails.Text = "Подробнее";
             btnTrainDetails.UseVisualStyleBackColor = false;
-            btnTrainDetails.Click += btnDetails_Click;
+            btnTrainDetails.Click += btnTrainDetails_Click;
             // 
             // btnTrain
             // 
@@ -77,9 +77,9 @@ namespace GymService
             btnTrain.FlatStyle = FlatStyle.Flat;
             btnTrain.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnTrain.ForeColor = SystemColors.ButtonHighlight;
-            btnTrain.Location = new Point(300, 30);
+            btnTrain.Location = new Point(312, 30);
             btnTrain.Name = "btnTrain";
-            btnTrain.Size = new Size(100, 33);
+            btnTrain.Size = new Size(104, 33);
             btnTrain.TabIndex = 1;
             btnTrain.Tag = "Тренировки";
             btnTrain.Text = "Записаться";
@@ -106,12 +106,12 @@ namespace GymService
             btnNutritionDetails.ForeColor = SystemColors.ButtonHighlight;
             btnNutritionDetails.Location = new Point(192, 30);
             btnNutritionDetails.Name = "btnNutritionDetails";
-            btnNutritionDetails.Size = new Size(98, 32);
+            btnNutritionDetails.Size = new Size(114, 32);
             btnNutritionDetails.TabIndex = 0;
             btnNutritionDetails.Tag = "Питание";
             btnNutritionDetails.Text = "Подробнее";
             btnNutritionDetails.UseVisualStyleBackColor = false;
-            btnNutritionDetails.Click += btnDetails_Click;
+            btnNutritionDetails.Click += btnNutritionDetails_Click;
             // 
             // btnNutrition
             // 
@@ -119,23 +119,23 @@ namespace GymService
             btnNutrition.FlatStyle = FlatStyle.Flat;
             btnNutrition.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnNutrition.ForeColor = SystemColors.ButtonHighlight;
-            btnNutrition.Location = new Point(300, 30);
+            btnNutrition.Location = new Point(312, 30);
             btnNutrition.Name = "btnNutrition";
-            btnNutrition.Size = new Size(100, 32);
+            btnNutrition.Size = new Size(104, 32);
             btnNutrition.TabIndex = 1;
             btnNutrition.Tag = "Питание";
             btnNutrition.Text = "Записаться";
             btnNutrition.UseVisualStyleBackColor = false;
-            btnNutrition.Click += btnTrain_Click;
+            btnNutrition.Click += btnNutrition_Click;
             // 
             // gbRecovery
             // 
             gbRecovery.Controls.Add(btnRecoveryDetails);
             gbRecovery.Controls.Add(btnRecovery);
             gbRecovery.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            gbRecovery.Location = new Point(29, 353);
+            gbRecovery.Location = new Point(29, 354);
             gbRecovery.Name = "gbRecovery";
-            gbRecovery.Size = new Size(463, 80);
+            gbRecovery.Size = new Size(463, 79);
             gbRecovery.TabIndex = 2;
             gbRecovery.TabStop = false;
             gbRecovery.Text = "План восстановления";
@@ -148,12 +148,12 @@ namespace GymService
             btnRecoveryDetails.ForeColor = SystemColors.ButtonHighlight;
             btnRecoveryDetails.Location = new Point(192, 30);
             btnRecoveryDetails.Name = "btnRecoveryDetails";
-            btnRecoveryDetails.Size = new Size(98, 29);
+            btnRecoveryDetails.Size = new Size(114, 29);
             btnRecoveryDetails.TabIndex = 0;
             btnRecoveryDetails.Tag = "Восстановление";
             btnRecoveryDetails.Text = "Подробнее";
             btnRecoveryDetails.UseVisualStyleBackColor = false;
-            btnRecoveryDetails.Click += btnDetails_Click;
+            btnRecoveryDetails.Click += btnRecoveryDetails_Click;
             // 
             // btnRecovery
             // 
@@ -161,14 +161,14 @@ namespace GymService
             btnRecovery.FlatStyle = FlatStyle.Flat;
             btnRecovery.Font = new Font("Arial", 9F, FontStyle.Bold);
             btnRecovery.ForeColor = SystemColors.ButtonHighlight;
-            btnRecovery.Location = new Point(300, 30);
+            btnRecovery.Location = new Point(312, 30);
             btnRecovery.Name = "btnRecovery";
-            btnRecovery.Size = new Size(100, 29);
+            btnRecovery.Size = new Size(104, 29);
             btnRecovery.TabIndex = 1;
             btnRecovery.Tag = "Восстановление";
             btnRecovery.Text = "Записаться";
             btnRecovery.UseVisualStyleBackColor = false;
-            btnRecovery.Click += btnTrain_Click;
+            btnRecovery.Click += btnRecovery_Click;
             // 
             // btnBack
             // 

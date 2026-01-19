@@ -58,8 +58,9 @@ namespace GymService
             txtFirst.Location = new Point(34, 104);
             txtFirst.Name = "txtFirst";
             txtFirst.PlaceholderText = "Имя";
-            txtFirst.Size = new Size(434, 33);
+            txtFirst.Size = new Size(434, 38);
             txtFirst.TabIndex = 0;
+            txtFirst.KeyPress += Name_KeyPress;
             // 
             // txtLast
             // 
@@ -67,8 +68,9 @@ namespace GymService
             txtLast.Location = new Point(34, 161);
             txtLast.Name = "txtLast";
             txtLast.PlaceholderText = "Фамилия";
-            txtLast.Size = new Size(434, 33);
+            txtLast.Size = new Size(434, 38);
             txtLast.TabIndex = 1;
+            txtLast.KeyPress += Name_KeyPress;
             // 
             // txtMiddle
             // 
@@ -76,8 +78,9 @@ namespace GymService
             txtMiddle.Location = new Point(34, 217);
             txtMiddle.Name = "txtMiddle";
             txtMiddle.PlaceholderText = "Отчество";
-            txtMiddle.Size = new Size(434, 33);
+            txtMiddle.Size = new Size(434, 38);
             txtMiddle.TabIndex = 2;
+            txtMiddle.KeyPress += Name_KeyPress;
             // 
             // numAge
             // 
@@ -86,7 +89,7 @@ namespace GymService
             numAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
             numAge.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numAge.Name = "numAge";
-            numAge.Size = new Size(223, 33);
+            numAge.Size = new Size(223, 38);
             numAge.TabIndex = 3;
             numAge.Value = new decimal(new int[] { 18, 0, 0, 0 });
             // 
@@ -97,7 +100,7 @@ namespace GymService
             cmbGender.Items.AddRange(new object[] { "Мужчина", "Женщина", "Другой" });
             cmbGender.Location = new Point(245, 426);
             cmbGender.Name = "cmbGender";
-            cmbGender.Size = new Size(223, 33);
+            cmbGender.Size = new Size(223, 39);
             cmbGender.TabIndex = 4;
             // 
             // numHeight
@@ -107,7 +110,7 @@ namespace GymService
             numHeight.Maximum = new decimal(new int[] { 250, 0, 0, 0 });
             numHeight.Minimum = new decimal(new int[] { 50, 0, 0, 0 });
             numHeight.Name = "numHeight";
-            numHeight.Size = new Size(223, 33);
+            numHeight.Size = new Size(223, 38);
             numHeight.TabIndex = 5;
             numHeight.Value = new decimal(new int[] { 170, 0, 0, 0 });
             // 
@@ -118,7 +121,7 @@ namespace GymService
             numWeight.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             numWeight.Minimum = new decimal(new int[] { 20, 0, 0, 0 });
             numWeight.Name = "numWeight";
-            numWeight.Size = new Size(223, 33);
+            numWeight.Size = new Size(223, 38);
             numWeight.TabIndex = 6;
             numWeight.Value = new decimal(new int[] { 70, 0, 0, 0 });
             // 
@@ -128,8 +131,9 @@ namespace GymService
             txtPhone.Location = new Point(34, 492);
             txtPhone.Name = "txtPhone";
             txtPhone.PlaceholderText = "+7...";
-            txtPhone.Size = new Size(434, 33);
+            txtPhone.Size = new Size(434, 38);
             txtPhone.TabIndex = 7;
+            txtPhone.KeyPress += Phone_KeyPress;
             // 
             // txtEmail
             // 
@@ -137,7 +141,7 @@ namespace GymService
             txtEmail.Location = new Point(34, 546);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
-            txtEmail.Size = new Size(434, 33);
+            txtEmail.Size = new Size(434, 38);
             txtEmail.TabIndex = 8;
             // 
             // btnSave
@@ -147,7 +151,7 @@ namespace GymService
             btnSave.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnSave.Location = new Point(34, 612);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(187, 53);
+            btnSave.Size = new Size(195, 53);
             btnSave.TabIndex = 9;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = false;
@@ -158,9 +162,9 @@ namespace GymService
             btnCancel.BackColor = Color.Chocolate;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            btnCancel.Location = new Point(281, 612);
+            btnCancel.Location = new Point(273, 612);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(187, 53);
+            btnCancel.Size = new Size(195, 53);
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = false;
@@ -185,7 +189,7 @@ namespace GymService
             labelAge.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             labelAge.Location = new Point(34, 280);
             labelAge.Name = "labelAge";
-            labelAge.Size = new Size(86, 25);
+            labelAge.Size = new Size(106, 31);
             labelAge.TabIndex = 12;
             labelAge.Text = "Возраст:";
             // 
@@ -195,7 +199,7 @@ namespace GymService
             labelHeight.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             labelHeight.Location = new Point(34, 330);
             labelHeight.Name = "labelHeight";
-            labelHeight.Size = new Size(90, 25);
+            labelHeight.Size = new Size(111, 31);
             labelHeight.TabIndex = 13;
             labelHeight.Text = "Рост(см):";
             // 
@@ -205,7 +209,7 @@ namespace GymService
             labelWeight.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             labelWeight.Location = new Point(34, 380);
             labelWeight.Name = "labelWeight";
-            labelWeight.Size = new Size(77, 25);
+            labelWeight.Size = new Size(94, 31);
             labelWeight.TabIndex = 14;
             labelWeight.Text = "Вес(кг):";
             // 
@@ -215,7 +219,7 @@ namespace GymService
             labelGender.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             labelGender.Location = new Point(34, 429);
             labelGender.Name = "labelGender";
-            labelGender.Size = new Size(53, 25);
+            labelGender.Size = new Size(64, 31);
             labelGender.TabIndex = 15;
             labelGender.Text = "Пол:";
             // 

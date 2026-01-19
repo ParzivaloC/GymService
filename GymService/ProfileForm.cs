@@ -27,14 +27,14 @@ namespace GymService
             lblEmail.Text = user.Email;
             lblPhone.Text = user.Phone;
 
-            lblDetails.Text = string.Join(Environment.NewLine,
+            lblDetails.Text = string.Join('\n',
                 $"Возраст: {user.Age}",
                 $"Пол: {user.Gender}",
                 $"Рост: {user.Height}",
                 $"Вес: {user.Weight}"
             );
 
-            lblCourses.Text = user.EnrolledCourses != null && user.EnrolledCourses.Any()
+            lblCourses.Text = user.EnrolledCourses != null && user.EnrolledCourses.Count > 0
                 ? string.Join(", ", user.EnrolledCourses)
                 : "Нет записей";
         }

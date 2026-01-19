@@ -34,26 +34,26 @@ namespace GymService
         {
             if (!UserStorage.UserExists())
             {
-                RegisterForm registerForm = new RegisterForm();
-                registerForm.FormClosed += ChildForm_FormClosed;
                 this.Hide();
-                registerForm.Show();
+                RegisterForm registerForm = new RegisterForm();
+                registerForm.ShowDialog();
+                this.Show();
             }
             else
             {
-                ProfileForm profileForm = new ProfileForm();
-                profileForm.FormClosed += ChildForm_FormClosed;
                 this.Hide();
-                profileForm.Show();
+                ProfileForm profileForm = new ProfileForm();
+                profileForm.ShowDialog();
+                this.Show();
             }
         }
 
         private void btnCourses_Click(object sender, EventArgs e)
         {
-            CoursesForm coursesForm = new CoursesForm();
-            coursesForm.FormClosed += ChildForm_FormClosed;
             this.Hide();
-            coursesForm.Show();
+            CoursesForm coursesForm = new CoursesForm();
+            coursesForm.ShowDialog();
+            this.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,11 +61,6 @@ namespace GymService
             Application.Exit();
         }
 
-        private void ChildForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Show();//показ Main
-            UpdateAccountButton();
-        }
 
         private void Main_Load(object sender, EventArgs e)
         {
